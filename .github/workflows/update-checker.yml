@@ -38,6 +38,7 @@ jobs:
       with:
         path: .commitHash
         key: HEAD-${{ steps.getHash.outputs.commitHash }}
+        node-version: '16'
 
     - name: Save New Commit Hash
       if: steps.cacheHash.outputs.cache-hit != 'true'
@@ -56,3 +57,4 @@ jobs:
       with:
         retain_days: 1
         keep_minimum_runs: 1
+        node-version: '16'
